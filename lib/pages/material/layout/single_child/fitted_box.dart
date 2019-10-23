@@ -24,13 +24,28 @@ class _TestState extends State<Test> {
     return Container(
       child: Column(
         children: <Widget>[
+          Container(
+            width: 100,
+            height: 100,
+            color: Colors.red,
+            child: FittedBox(
+              child: Container(width: 50, height: 50, color: Colors.blue),
+              fit: BoxFit.scaleDown,
+              alignment: Alignment.bottomLeft,
+            ),
+          )
         ],
       ),
     );
   }
 }
 
-final _text = '''''';
+final _text = '''根据身体的大小来调整孩子的大小和位置。''';
 
-final _code = '''
+final _code = '''FittedBox({
+  Key key,
+  this.fit = BoxFit.contain,//如何将子元素在布局的容器中进行空间分配
+  this.alignment = Alignment.center,//子元素的对齐方式 
+  Widget child,//子元素
+})
 ''';

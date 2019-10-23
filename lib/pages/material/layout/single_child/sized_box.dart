@@ -24,13 +24,29 @@ class _TestState extends State<Test> {
     return Container(
       child: Column(
         children: <Widget>[
+          SizedBox(
+            width: 200,
+            height: 200,
+            child: Container(
+              color: Colors.red,
+              width: 100,
+              height: 100,
+            ),
+          )
         ],
       ),
     );
   }
 }
 
-final _text = '''''';
+final _text = '''创建一个固定大小的容器。
+child不为null时，如果设置了宽高，则会强制把child尺寸调到此宽高；如果没有设置宽高，则会根据child尺寸进行调整；
+child为null时，如果设置了宽高，则自身尺寸调整到此宽高值，如果没设置，则尺寸为0；''';
 
-final _code = '''
+final _code = '''SizedBox({
+  Key key,
+  this.width,//宽度
+  this.height,//高度
+  Widget child,//子widget
+})
 ''';

@@ -24,13 +24,34 @@ class _TestState extends State<Test> {
     return Container(
       child: Column(
         children: <Widget>[
+          Container(
+            color: Colors.green,
+            alignment: Alignment.topRight,
+            width: 200.0,
+            height: 200.0,
+            padding: EdgeInsets.all(5.0),
+            child: SizedOverflowBox(
+              size: Size(100.0, 200.0),
+              child: Container(
+                color: Colors.red,
+                width: 200.0,
+                height: 100.0,
+              ),
+            ),
+          )
         ],
       ),
     );
   }
 }
 
-final _text = '''''';
+final _text = '''创建一个固定大小的widget，允许子widget溢出。
+参数[size]不能为空。''';
 
-final _code = '''
+final _code = '''SizedOverflowBox({
+  Key key,
+  @required this.size,
+  this.alignment = Alignment.center,
+  Widget child,
+})
 ''';

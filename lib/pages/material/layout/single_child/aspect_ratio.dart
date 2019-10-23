@@ -24,13 +24,24 @@ class _TestState extends State<Test> {
     return Container(
       child: Column(
         children: <Widget>[
+          AspectRatio(
+            aspectRatio: 5,
+            child: Container(
+              color: Colors.red,
+            ),
+          ),
+          Text('abc'),
         ],
       ),
     );
   }
 }
 
-final _text = '''''';
+final _text = '''创建具有特定长宽比的小部件''';
 
-final _code = '''
+final _code = '''AspectRatio({
+  Key key,
+  @required this.aspectRatio,//要使用的长宽比,
+  Widget child,
+})
 ''';

@@ -24,13 +24,28 @@ class _TestState extends State<Test> {
     return Container(
       child: Column(
         children: <Widget>[
+          Container(
+              width: 200,
+              height: 200,
+              child: Padding(
+                padding: EdgeInsets.all(10),
+                child: Container(
+                  color: Colors.blue,
+                  child: Text('红色边框的宽度就是padding 控件设置的内边距宽度'),
+                ),
+              ),
+              color: Colors.red)
         ],
       ),
     );
   }
 }
 
-final _text = '''''';
+final _text = '''创建一个有内边距的widget,[padding]参数不能为空''';
 
-final _code = '''
+final _code = '''Padding({
+  Key key,
+  @required this.padding,//内边距
+  Widget child,//子widget
+})
 ''';

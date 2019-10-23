@@ -24,13 +24,30 @@ class _TestState extends State<Test> {
     return Container(
       child: Column(
         children: <Widget>[
+          IntrinsicHeight(
+            child: new Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                new Container(color: Colors.blue, width: 100.0),
+                new Container(
+                  color: Colors.red,
+                  width: 50.0,
+                  height: 100.0,
+                ),
+                new Container(color: Colors.yellow, width: 150.0),
+              ],
+            ),
+          )
         ],
       ),
     );
   }
 }
 
-final _text = '''''';
+final _text = '''这个控件的作用，是将可能高度不受限制的child，调整到一个合适并且合理的尺寸。
+避免使用(官方建议)
+''';
 
 final _code = '''
+IntrinsicHeight({Key key, Widget child})
 ''';

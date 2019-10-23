@@ -19,11 +19,29 @@ class Test extends StatefulWidget {
 }
 
 class _TestState extends State<Test> {
+  var _isHidden = false;
+  var _btnText = "隐藏";
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: <Widget>[
+          Offstage(
+            child: Text(
+              '这是一段文件，你可以通过下面的按钮来隐藏|显示它！',
+            ),
+            offstage: _isHidden,
+          ),
+          Divider(),
+          RaisedButton(
+            child: Text(_btnText),
+            onPressed: () {
+              setState(() {
+                this._isHidden = !this._isHidden;
+                this._btnText = this._isHidden?"显示":"隐藏";
+              });
+            },
+          )
         ],
       ),
     );
@@ -32,5 +50,9 @@ class _TestState extends State<Test> {
 
 final _text = '''''';
 
-final _code = '''
+final _code = '''Offstage({
+  Key key, 
+  this.offstage = true, //true:显示|false:隐藏
+  Widget child// 子widget
+})
 ''';
