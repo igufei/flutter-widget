@@ -33,7 +33,7 @@ class _TestState extends State<Test> {
             icon: Icon(Icons.menu),
             onPressed: () {},
           ),
-          actionsForegroundColor: Colors.blue,
+          //actionsForegroundColor: Colors.blue,
           transitionBetweenRoutes: false,
         ),
         //backgroundColor: Colors.yellowAccent,

@@ -28,16 +28,19 @@ class _TestState extends State<Test> {
           CupertinoNavigationBar(
             leading: CupertinoNavigationBarBackButton(
               color: Colors.amberAccent,
-              previousPageTitle:'退后' ,
+              previousPageTitle: '退后',
             ),
             previousPageTitle: '退后',
             middle: Text('ios风格的导航栏'),
             automaticallyImplyMiddle: false,
-            trailing: IconButton(icon: Icon(Icons.menu),onPressed: (){},),
+            trailing: IconButton(
+              icon: Icon(Icons.menu),
+              onPressed: () {},
+            ),
             //border: Border(bottom: BorderSide(color: Colors.red)),
             //backgroundColor: Colors.red,
             //padding: EdgeInsetsDirectional.only(start: 20,end: 20,),
-            actionsForegroundColor: Colors.blue,
+            //actionsForegroundColor: Colors.blue,
             transitionBetweenRoutes: false,
           )
         ],

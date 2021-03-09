@@ -45,11 +45,12 @@ class _TestState extends State<Test> with SingleTickerProviderStateMixin {
                   context: context,
                   builder: (BuildContext context) {
                     return CupertinoFullscreenDialogTransition(
-                        child: Container(
-                          alignment: Alignment.center,
-                          child: Text('test'),
-                        ),
-                        animation: animation);
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: Text('test'),
+                      ),
+                      /* animation: animation */
+                    );
                   });
             },
           )
